@@ -10,3 +10,20 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
+  const m = moment().format("YYYY-MM-DD");
+  console.log(m);
+
+  //Query URL for RAWG Gaming
+  const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${m}&ordering=-added`;
+
+  //Attempting AJAX Call for RAWG Gaming 
+  $.ajax({
+    url: queryURL,
+    method: "GET" 
+  }).then(function(response) {
+
+
+      console.log(response);
+  });
+
