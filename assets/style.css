@@ -1,3 +1,67 @@
+
+#form {
+float: right;
+
+
+}
+
+#content {
+
+    float: right;
+}
+
+
+body {
+
+    cursor: url("http://www.rw-designer.com/cursor-view/27134.png"),auto;
+    
+
+}
+
+* {
+
+    font-family: 'joystixmonospace';
+    text-transform: uppercase;
+    border-radius: 25px;
+
+}
+
+#jumbotron {
+
+
+    background-image: url("http://www.seekgif.com/uploads/pixel-wallpaper-background-1.png");
+    background-size: 500px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 25px;
+    font-weight: 500px;
+
+    
+
+}
+
+.card {
+
+    border-radius: 25px;
+
+
+
+}
+
+.pikachu,
+.bulb,
+.char {
+
+    width: 50px;
+    padding-top: 50px;
+
+
+}
+
+.card-header:first-child {
+    border-radius: 25px;
+  }
 #jumbotron{
     text-align: center;
 }
