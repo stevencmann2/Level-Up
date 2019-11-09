@@ -1,7 +1,7 @@
 //hide the greeeting card for now
 $(document).ready(function hiddenContent() {
   $("#greeting-card").hide();
-  $(".member-exclusive-content").hide();
+  $("#member-games").hide();
 });
 
 // Your web app's Firebase configuration
@@ -97,6 +97,7 @@ $("#log-out").on("click", function (event) {
   event.preventDefault();
   /////////may want to delete this later but this will show the original form again
   $("#sign-up-form").show();
+  $("#member-games").hide();
   $("#greeting-card").hide();
   auth.signOut();
   // console.log("user has logged out");
@@ -127,7 +128,7 @@ auth.onAuthStateChanged(user => {
 
   if (user) {
     console.log("user is logged in: ", user);
-    $(".member-exclusive-content").show();
+    $("#member-games").show();
   } else {
     console.log("user logged out");
    }
