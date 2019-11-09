@@ -62,3 +62,10 @@ body {
 .card-header:first-child {
     border-radius: 25px;
   }
+#jumbotron{
+    text-align: center;
+}
+
+#form {
+float: right;
+}
