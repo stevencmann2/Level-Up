@@ -45,6 +45,7 @@ console.log(db);
 let email = $("#email").val().trim(); //this will be changed to lowercase on the next line
 let useremail = email.toLowerCase();
 let password = $("#password").val().trim();
+let username = $("#username").val().trim();
 // let username = $("#username").val().trim();
 
 $("#sign-up-button").on("click", function (event) {
@@ -56,6 +57,7 @@ $("#sign-up-button").on("click", function (event) {
   let email = $("#email").val().trim(); //this will be changed to lowercase on the next line
   let useremail = email.toLowerCase();
   let password = $("#password").val().trim();
+  let username = $("#username").val().trim();        //added the username value
   // let username = $("#username").val().trim();
 
   //  console.log(email);
@@ -66,6 +68,10 @@ $("#sign-up-button").on("click", function (event) {
   // firebase password function to create a user with password and email &&&& gives them a credential
   auth.createUserWithEmailAndPassword(useremail, password).then(cred => {
     console.log(cred.user); //gives us the object of all the users credentials
+    cred.user.updateProfile({
+      displayName: username       ///// accessing the username through the display name aobject in firebase
+
+  });
   });
 
   $("#email").val("");
@@ -79,6 +85,8 @@ auth.onAuthStateChanged(function (user) {
   if (user) {
     $("#sign-up-form").hide();
     $("#greeting-card").show();
+    $("#user-greeting").text(user.displayName);     //added
+    console.log(user.displayName);    // added 
   } else {
     $("#greeting-card").hide();
   }
@@ -102,6 +110,7 @@ $("#log-in-button").on("click", function (event) {
   emailValue = $("#member-email").val().trim(); /////to lower case
   email = emailValue.toLowerCase();
   password = $("#member-password").val().trim();
+
   auth.signInWithEmailAndPassword(email, password).then(cred => {
     //console.log(cred.user);
     // close the MEMBER modal  by hidin it and reset the form by clearing the values
@@ -116,13 +125,11 @@ auth.onAuthStateChanged(user => {
   //console.log(user);   // console to check to see if logged in, if not returns null
   // check user logs in or not with if statement
 
-
-
-
   if (user) {
     console.log("user is logged in: ", user);
     $(".member-exclusive-content").show();
   } else {
     console.log("user logged out");
    }
+
 });
