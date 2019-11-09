@@ -24,16 +24,16 @@
     <div class="container">
 
 
-<!--LEVEL UP JUMBOTRON-->
-    <div class="jumbotron jumbotron-fluid" id="jumbotron">
-        <div class="container">
-            <h1 class="display-4">LEVEL UP GAMING</h1>
-            <img class="pikachu" src="https://i.gifer.com/4bXB.gif">
-            <img class="bulb" src="https://i.gifer.com/WnES.gif">
-            <img class="char" src="https://media1.giphy.com/media/7ydJ5K6gNUQXm/giphy.gif">
+        <!--LEVEL UP JUMBOTRON-->
+        <div class="jumbotron jumbotron-fluid" id="jumbotron">
+            <div class="container">
+                <h1 class="display-4">LEVEL UP GAMING</h1>
+                <img class="pikachu" src="https://i.gifer.com/4bXB.gif">
+                <img class="bulb" src="https://i.gifer.com/WnES.gif">
+                <img class="char" src="https://media1.giphy.com/media/7ydJ5K6gNUQXm/giphy.gif">
+            </div>
         </div>
-    </div>
-        
+
         <!--NAVBAR-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -63,17 +63,17 @@
                     </li>
                 </ul>
                 <!--SOCIAL MEDIA ICONS-->
-                <div class="float-right" id="icons">
-                    <i class=" facebook fab fa-2x fa-facebook"></i>
+                <!-- <div id="icons">
+                    <i class="facebook fab fa-sm fa-facebook"></i>
 
-                    <i class="twitch fab fa-2x fa-twitch"></i>
+                    <i class="twitch fab fa-sm fa-twitch"></i>
 
-                    <i class="twitter fab fa-2x fa-twitter-square"></i>
+                    <i class="twitter fab fa-sm fa-twitter-square"></i>
 
-                    <i class="instagram fab fa-2x fa-instagram"></i>
+                    <i class="instagram fab fa-sm fa-instagram"></i>
 
-                    <i class="youtube fab fa-2x fa-youtube"></i>
-                </div>
+                    <i class="youtube fab fa-sm fa-youtube"></i>
+                </div> -->
             </div>
         </nav>
 
@@ -120,12 +120,25 @@
                         <input type="password" class="form-control" id="password"
                             placeholder="Must be at least 6 characters">
                     </div>
-
+                    
                     <button type="submit" class="btn btn-primary" id="sign-up-button">SIGN UP</button>
 
-                    <a href="#" class="card-link ml-3" id="member-link" data-toggle="modal"
-                        data-target="#sign-in-modal">Already a Member? Sign In</a>
+                    <a href="#" class="card-link text-nowrap mt-3" id="member-link" data-toggle="modal"
+                        data-target="#sign-in-modal">Already a Member?</a>
+                    
                 </form>
+
+                <!--ONCE LOGGED IN THIS APPEARS-->
+                <div class="m-auto" id="greeting-card">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title" id="user-greeting">PLACED HOLDER USERNAME</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">You are currently logged in</h6>
+                            <a href="#" class="card-link" id="log-out">Logout</a>
+                            <a href="#" class="card-link" id="settings">Settings</a>
+                        </div>
+                    </div>
+                </div>
 
                 <!--MEMBER SIGN IN MODAL -->
                 <div class="modal fade" id="sign-in-modal">
@@ -164,52 +177,42 @@
 
                 <br>
                 <!--EXTRA CONTENT CARD-->
-           <div class="card" id="content" style="width: 18rem;">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
-                <div class="card-header">Card title</div>
+                <div class="card" id="content" style="width: 18rem;">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-header">Card title</div>
                     <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                    content.</p>
-            </div>
-        </div>
-
-        <!--ONCE LOGGED IN THIS APPEARS-->
-        <div class="col-6 m-auto" id="greeting-card">
-            <div class="card mt-5 text-center" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title" id="user-greeting">PLACED HOLDER USERNAME</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">You are currently logged in</h6>
-                    <a href="#" class="card-link" id="log-out">Logout</a>
-                    <a href="#" class="card-link" id="settings">Settings</a>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's
+                            content.</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!--HERE I AM EXPERIEMETNING WITH EXCLUSIVE MEMBER CONTENT THAT WILL ONLY SHOW IF A USER IS LOGGED IN-->
-        <div class="row member-exclusive-content">
-            <div class="col-6 m-auto mt-5">
-                <span><a href="#"> EXCLUSIVE MEMBER CONTENT WOOOOOOOW THIS CAN BE CLICKABLE AND THEN WE CAN LINK CONTENT
-                        THROUGH FIREBASE OR RUN A SHOW FUNCTION TO ANOTHER TAB </a></span>
-            </div>
-        </div>
 
-    </div>
+                <!--HERE I AM EXPERIEMETNING WITH EXCLUSIVE MEMBER CONTENT THAT WILL ONLY SHOW IF A USER IS LOGGED IN-->
+                <div class="row member-exclusive-content">
+                    <div class="col-6 m-auto mt-5">
+                        <span><a href="#"> EXCLUSIVE MEMBER CONTENT</a></span>
+                    </div>
+                </div>
 
-    <!-- Link to Moment.js should go here -->
-    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
-    <!-- Firebase Core JavaScript Link -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-    <!-- Specific Firebase products we want (Database) -->
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <!-- Bootstrap Javascript File-->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <!--New firebase we want to use AUTH & FIRESTORE our new databse-->
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
-    <script src="assets/levelUp.js"></script>
+            </div>
+
+            <!-- Link to Moment.js should go here -->
+            <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+            <!-- Firebase Core JavaScript Link -->
+            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+            <!-- Specific Firebase products we want (Database) -->
+            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            <!-- Bootstrap Javascript File-->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous">
+            </script>
+            <!--New firebase we want to use AUTH & FIRESTORE our new databse-->
+            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+            <script src="assets/levelUp.js"></script>
 
 </body>
