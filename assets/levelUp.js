@@ -57,7 +57,7 @@ $("#sign-up-button").on("click", function (event) {
   let email = $("#email").val().trim(); //this will be changed to lowercase on the next line
   let useremail = email.toLowerCase();
   let password = $("#password").val().trim();
-  let username = $("#username").val().trim();        //added the username value
+  let username = $("#username").val().trim(); //added the username value
   // let username = $("#username").val().trim();
 
   //  console.log(email);
@@ -69,9 +69,9 @@ $("#sign-up-button").on("click", function (event) {
   auth.createUserWithEmailAndPassword(useremail, password).then(cred => {
     console.log(cred.user); //gives us the object of all the users credentials
     cred.user.updateProfile({
-      displayName: username       ///// accessing the username through the display name aobject in firebase
+      displayName: username ///// accessing the username through the display name aobject in firebase
 
-  });
+    });
   });
 
   $("#email").val("");
@@ -85,8 +85,8 @@ auth.onAuthStateChanged(function (user) {
   if (user) {
     $("#sign-up-form").hide();
     $("#greeting-card").show();
-    $("#user-greeting").text(user.displayName);     //added
-    console.log(user.displayName);    // added 
+    $("#user-greeting").text(user.displayName); //added
+    console.log(user.displayName); // added 
   } else {
     $("#greeting-card").hide();
   }
@@ -131,6 +131,56 @@ auth.onAuthStateChanged(user => {
     $("#member-games").show();
   } else {
     console.log("user logged out");
-   }
+  }
+});
+
+// HOT PEPPER GAMING YOUTUBE API
+
+$(document) ready(function () {
+  const key = 'AIzaSyD_Mcasq8CCNJ2aC03VP9Fh2KORaFHwFhE';
+  const playlistId = 'PLnj5vlsXg9ljZ6QJA8g3z_bz3e56FMPcr';
+  const URL = 'https://www.googleapis.com/youtube/v3/playlistItemsists';
+
+  let options = {
+    part: 'snippet',
+    key: key,
+    maxResults: 20,
+    playlistId: playlistId
+  }
+
+  loadVids();
+
+  function loadVids() {
+    $.getJSON(URL, options, function (data){
+      console.log(data)
+      cost id = data.items[0].snippet.resourceId.videoId;
+      mainVid(id);
+      
+    })
+  }
+
+  function mainVid(id) {
+    $('#video').html(`
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    `);
+
+  }
+
+  function resultsLoop(data) {
+
+const thumb = data.item.snippet.thumbnails.medium.ulr;
+
+    $('main').html(`
+    <article>
+      <img src="assets/images/hotpepper.png" alt="" class="thumb">
+      <div class="details">
+          <h5>Title</h5>
+          <p>I am a description</p>
+      </div>
+  </article>
+
+
+    `)
+  }
 
 });
