@@ -55,7 +55,6 @@ float: right;
 
 #member-link{
     font-size: 0.938em;
-
 }
 
 p{
@@ -90,3 +89,48 @@ article:hover{
 .details{
     padding: 8px 22px;
 }
+=======
+}
+
+
+
+/* THIS IS FOR THE SCRATCH GAMES */
+
+.game-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.game-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+/* FOOTER CSS */
+#homepage-footer-link {
+    color: red;
+}
+
+#homepage-footer-link:hover {
+    color:greenyellow;
+}
+
+/* THIS IS FOR THE SOCIAL MEDIA ICONS */
+i {
+    color:red
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+i:hover {
+    color:greenyellow;
+}
+
