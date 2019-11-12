@@ -57,6 +57,8 @@ float: right;
     font-size: 0.938em;
 }
 
+/*Hot Pepper Gaming YouTube Page*/
+
 p{
     color: grey;
     font-size: 0.7rem;
@@ -89,20 +91,18 @@ article:hover{
 .details{
     padding: 8px 22px;
 }
-=======
-}
 
 
-
-/* THIS IS FOR THE SCRATCH GAMES */
+/*THIS IS FOR THE SCRATCH GAMES*/
 
 .game-wrapper {
 	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
+	padding-bottom: 56.25%;
 	padding-top: 25px;
 	height: 0;
 }
-.game-wrapper iframe {
+
+iframe {
 	position: absolute;
 	top: 0;
 	left: 0;
