@@ -1,6 +1,5 @@
-
 $(document).ready(function () {
-    //This is related to HTML 
+      //This is related to HTML 
       $("#greeting-card").hide();
       $("#member-games").hide();
 
@@ -19,7 +18,7 @@ $(document).ready(function () {
       loadVids();
 
       function loadVids() {
-        $.getJSON(URL, options, function(data) {
+        $.getJSON(URL, options, function (data) {
           console.log(data);
           const id = data.items[0].snippet.resourceId.videoId;
           mainVid(id);
@@ -36,7 +35,7 @@ $(document).ready(function () {
 
       function resultsLoop(data) {
 
-        $.each(data.items, function(i, item) {
+        $.each(data.items, function (i, item) {
 
           const thumb = item.snippet.thumbnails.medium.url;
           const title = item.snippet.title;
@@ -59,7 +58,7 @@ $(document).ready(function () {
         const id = $(this).attr('data-key');
         mainVid(id);
       });
-    });
+});
 
       // Your web app's Firebase configuration
       var firebaseConfig = {
