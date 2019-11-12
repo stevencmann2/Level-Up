@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
       // WALKTHROUGHS YOUTUBE API
       const key = 'AIzaSyAV0wUsK3zb2SGqevY8kwnorAo2CqNOyZ8';
       const playlistId = 'PLwaWr8yQbPuFir-1QFIncwHPg3iR1f4Cv';

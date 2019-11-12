@@ -128,7 +128,13 @@ $(document).ready(function () {
             displayName: username ///// accessing the username through the display name aobject in firebase
 
           });
-        });
+
+          //FOR ERROR MESSAGES
+          $(".sign-up-error").text("");
+        }).catch(err => {
+          $(".sign-up-error").text(err.message);
+
+        })
 
         $("#email").val("");
         $("#password").val("");
@@ -174,6 +180,12 @@ $(document).ready(function () {
           $("#sign-in-modal").modal('hide');
           $("#member-email").val("");
           $("#member-password").val("");
+
+          //For ERROR MESSAGES 
+          $(".log-in-error").text("");
+
+        }).catch(err => {
+          $(".log-in-error").text(err.message);
         })
       });
 

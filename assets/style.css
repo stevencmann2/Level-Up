@@ -149,3 +149,13 @@ p {
 input {
     text-transform: none;
 }
+
+/* LOGIN AND SIGN IN ERROR MESSAGE TEXT COLOR */
+
+.sign-up-error {
+    color: red;
+}
+
+.log-in-error {
+    color: red;
+}
