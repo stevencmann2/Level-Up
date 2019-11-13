@@ -60,75 +60,74 @@ $(document).ready(function () {
       });
 });
 
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyAoVw91_gi_qp80TG0T-0o7mCej_yKLStQ",
-  authDomain: "level-up-gaming.firebaseapp.com",
-  databaseURL: "https://level-up-gaming.firebaseio.com",
-  projectId: "level-up-gaming",
-  storageBucket: "level-up-gaming.appspot.com",
-  messagingSenderId: "360362860846",
-  appId: "1:360362860846:web:c6e4191497b1cb712c1abf"
-};
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAoVw91_gi_qp80TG0T-0o7mCej_yKLStQ",
+        authDomain: "level-up-gaming.firebaseapp.com",
+        databaseURL: "https://level-up-gaming.firebaseio.com",
+        projectId: "level-up-gaming",
+        storageBucket: "level-up-gaming.appspot.com",
+        messagingSenderId: "360362860846",
+        appId: "1:360362860846:web:c6e4191497b1cb712c1abf"
+      };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const m = moment().format("YYYY-MM-DD");
-// console.log(m);
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const m = moment().format("YYYY-MM-DD");
+      // console.log(m);
 
-//Query URL for RAWG Gaming
-const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${m}&ordering=-added`;
+      //Query URL for RAWG Gaming
+      const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${m}&ordering=-added`;
 
-//Attempting AJAX Call for RAWG Gaming 
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function (response) {
-  // console.log(response);
-});
+      //Attempting AJAX Call for RAWG Gaming 
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function (response) {
+        // console.log(response);
+      });
 
-/////////////////////////////////////////////////////////////////FIERBASE AUTH////////////////////////////////////////////////////////////////
-//make auth and firstore references
-const auth = firebase.auth();
-const db = firebase.firestore();
+      /////////////////////////////////////////////////////////////////FIERBASE AUTH////////////////////////////////////////////////////////////////
+      //make auth and firstore references
+      const auth = firebase.auth();
+      const db = firebase.firestore();
 
 
-console.log(auth);
-console.log(db);
+      console.log(auth);
+      console.log(db);
 
-//Declaring variables from Sign Up form
+      //Declaring variables from Sign Up form
 
-let email = $("#email").val().trim(); //this will be changed to lowercase on the next line
-let useremail = email.toLowerCase();
-let password = $("#password").val().trim();
-let username = $("#username").val().trim();
-// let username = $("#username").val().trim();
+      let email = $("#email").val().trim(); //this will be changed to lowercase on the next line
+      let useremail = email.toLowerCase();
+      let password = $("#password").val().trim();
+      let username = $("#username").val().trim();
+      // let username = $("#username").val().trim();
 
-$("#sign-up-button").on("click", function (event) {
-  ///prevent reload of page
-  event.preventDefault();
+      $("#sign-up-button").on("click", function (event) {
+        ///prevent reload of page
+        event.preventDefault();
 
-  ///////gather info and put apporpriate varibales to lowercase
+        ///////gather info and put apporpriate varibales to lowercase
 
-  let email = $("#email").val().trim(); //this will be changed to lowercase on the next line
-  let useremail = email.toLowerCase();
-  let password = $("#password").val().trim();
-  let username = $("#username").val().trim(); //added the username value
-  // let username = $("#username").val().trim();
+        let email = $("#email").val().trim(); //this will be changed to lowercase on the next line
+        let useremail = email.toLowerCase();
+        let password = $("#password").val().trim();
+        let username = $("#username").val().trim(); //added the username value
+        // let username = $("#username").val().trim();
 
-  //  console.log(email);
-  //  console.log(password);
-  //  console.log(username);
-  //  console.log(useremail);
+        //  console.log(email);
+        //  console.log(password);
+        //  console.log(username);
+        //  console.log(useremail);
 
-  // firebase password function to create a user with password and email &&&& gives them a credential
-  auth.createUserWithEmailAndPassword(useremail, password).then(cred => {
-    console.log(cred.user); //gives us the object of all the users credentials
-    cred.user.updateProfile({
-      displayName: username ///// accessing the username through the display name aobject in firebase
+        // firebase password function to create a user with password and email &&&& gives them a credential
+        auth.createUserWithEmailAndPassword(useremail, password).then(cred => {
+          console.log(cred.user); //gives us the object of all the users credentials
+          cred.user.updateProfile({
+            displayName: username ///// accessing the username through the display name aobject in firebase
 
-    });
-  });
+          });
 
           //FOR ERROR MESSAGES
           $(".sign-up-error").text("");
