@@ -8,21 +8,26 @@
     <title>Walk Throughs-Level Up!</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Bootstrap CDN STYLE SHEET-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap" rel="stylesheet">
+    <!--Our style Sheet-->
     <link rel="stylesheet" href="assets/style.css">
+    <!--Web font kit -->
     <link rel="stylesheet" href="./assets/fonts/webfontkit-20191108-200501/stylesheet.css">
+    <!--I AM ATTATCHING STEVENS FONT AWESOME KIT TO TEST IF THE FOOTER WORKS-->
+    <!--FontAwesome Kit Code-->
+    <script src="https://kit.fontawesome.com/4e9921963f.js" crossorigin="anonymous"></script>
 
 
 
 </head>
 
 <body>
-
-
-
+    <!--Container for the whole page-->
     <div class="container">
-
 
         <!--LEVEL UP JUMBOTRON-->
         <div class="jumbotron jumbotron-fluid" id="jumbotron">
@@ -62,18 +67,6 @@
                         <a class="nav-link" href="walkthru.html">Walkthroughs</a>
                     </li>
                 </ul>
-                <!--SOCIAL MEDIA ICONS-->
-                <!-- <div id="icons">
-                    <i class="facebook fab fa-sm fa-facebook"></i>
-
-                    <i class="twitch fab fa-sm fa-twitch"></i>
-
-                    <i class="twitter fab fa-sm fa-twitter-square"></i>
-
-                    <i class="instagram fab fa-sm fa-instagram"></i>
-
-                    <i class="youtube fab fa-sm fa-youtube"></i>
-                </div> -->
             </div>
         </nav>
 
@@ -84,17 +77,20 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        Quote
+                        Popular Walkthroughs of 2019
                     </div>
                     <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source
-                                    Title</cite></footer>
-                        </blockquote>
+                        <section id="video">
+
+                        </section>
+
+                        <main>
+
+                        </main>
                     </div>
                 </div>
             </div>
+
 
             <br>
 
@@ -120,12 +116,19 @@
                         <input type="password" class="form-control" id="password"
                             placeholder="Must be at least 6 characters">
                     </div>
-                    
+
+                    <!--Error Message DIV-->
+                    <div class="text-center mt-2">
+                        <p class="sign-up-error"></p>
+                    </div>
+
+                    <!-- End of ERROR DIV-->
+
                     <button type="submit" class="btn btn-primary" id="sign-up-button">SIGN UP</button>
 
                     <a href="#" class="card-link text-nowrap mt-3" id="member-link" data-toggle="modal"
                         data-target="#sign-in-modal">Already a Member?</a>
-                    
+
                 </form>
 
                 <!--ONCE LOGGED IN THIS APPEARS-->
@@ -164,6 +167,14 @@
                                             placeholder="Password">
                                     </div>
 
+                                    <!--Error Message DIV-->
+                                    <div class="text-center mt-2">
+                                        <p class="log-in-error"></p>
+                                    </div>
+
+                                    <!-- End of ERROR DIV-->
+
+
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary" id="log-in-button">LOGIN</button>
                                         <button type="reset" class="btn btn-primary" id="cancel-button"
@@ -188,23 +199,64 @@
                 </div>
             </div>
 
-            <!-- Link to Moment.js should go here -->
-            <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
-            <!-- Firebase Core JavaScript Link -->
-            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-            <!-- Specific Firebase products we want (Database) -->
-            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-            <!-- Bootstrap Javascript File-->
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous">
-            </script>
-            <!--New firebase we want to use AUTH & FIRESTORE our new databse-->
-            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
-            <script src="assets/levelUp.js"></script>
+            <!--This is the closing main row div>-->
+        </div>
+        <!--FOOTER IT NEEDS TO BE PASTED ACROSS THE PAGES-->
+        <div class="row mt-5 bg-secondary">
+            <footer class="page-footer font-small text-center  m-auto pt-2">
+                <!--This is the top part of the footer with lnk to homepage-->
+                <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                    <a id="homepage-footer-link" href="https://aw-exe.github.io/Level-Up-Gaming-Site/"> Level Up
+                        Gaming</a>
+                </div>
+                <!--icons div for footer-->
+                <!--SOCIAL MEDIA ICONS-->
+                <div id="icons" class="mb-2">
+                    <!--facebook link-->
+                    <a href="https://www.facebook.com/search/top/?q=gaming&epa=SEARCH_BOX">
+                        <i class="facebook fab fa-lg fa-facebook"></i>
+                    </a>
+                    <!--Twitch link-->
+                    <a href="https://www.twitch.tv/">
+                        <i class="twitch fab fa-lg fa-twitch"></i>
+                    </a>
+
+                    <!--Twitter link-->
+                    <a href="https://twitter.com/hashtag/gaming?lang=en">
+                        <i class="twitter fab fa-lg fa-twitter-square"></i>
+                    </a>
+
+                    <!--Instagram link-->
+                    <a href="https://www.instagram.com/explore/tags/gaming/?hl=en">
+                        <i class="instagram fab fa-lg fa-instagram"></i>
+                    </a>
+
+                    <!--Youtubelink-->
+                    <a href="https://www.youtube.com/channel/UCOpNcN46UbXVtpKMrmU4Abg">
+                        <i class="youtube fab fa-lg fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </footer>
+        </div>
+
+        <!-- Link to Moment.js should go here -->
+        <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+        <!-- Firebase Core JavaScript Link -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+        <!-- Specific Firebase products we want (Database) -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!-- Bootstrap Javascript File-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <!--New firebase we want to use AUTH & FIRESTORE our new databse-->
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+        <script src="assets/walkthru.js"></script>
 
 </body>

@@ -1,21 +1,30 @@
 
 #form {
 float: right;
+text-transform: uppercase;
 }
 
 #content {
     float: right;
 }
 
-
 body {
     cursor: url("http://www.rw-designer.com/cursor-view/27134.png"),auto;
+    background-color: #eeeeee;
+    /* background-color: #112222; */
 }
 
 * {
     font-family: 'joystixmonospace';
-    text-transform: uppercase;
     border-radius: 25px;
+}
+
+.card-header {
+    text-transform: uppercase;
+}
+
+.navbar {
+    text-transform: uppercase;
 }
 
 #jumbotron {
@@ -24,6 +33,7 @@ body {
     padding-bottom: 10px;
     text-align: center;
     font-size: 50px;
+    text-transform: uppercase;
     border-radius: 25px;
     font-weight: 500px;
 }
@@ -41,7 +51,7 @@ body {
 
 .card-header:first-child {
     border-radius: 25px;
-  }
+}
 
 #jumbotron{
     text-align: center;
@@ -53,4 +63,99 @@ float: right;
 
 #member-link{
     font-size: 0.938em;
+}
+
+/*Hot Pepper Gaming YouTube Page*/
+
+p{
+    color: grey;
+    font-size: 0.7rem;
+}
+
+.hot-pepper-card {
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 2px solid white;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+article:hover{
+    border: 2px solid grey;
+}
+
+.thumb{
+    height: 100px;
+    border-radius: 4px;
+}
+
+.details{
+    padding: 8px 22px;
+}
+
+/*THIS IS FOR THE SCRATCH GAMES*/
+
+.game-wrapper {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+
+.scratch {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* FOOTER CSS */
+#homepage-footer-link {
+    color: red;
+}
+
+#homepage-footer-link:hover {
+    color:greenyellow;
+}
+
+/* THIS IS FOR THE SOCIAL MEDIA ICONS */
+i {
+    color:red
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+i:hover {
+    color:greenyellow;
+}
+
+h4 {
+    font-family: 'Sunflower', sans-serif;
+}
+
+p {
+    font-family: 'Sunflower', sans-serif;
+}
+
+input {
+    text-transform: none;
+}
+
+/* LOGIN AND SIGN IN ERROR MESSAGE TEXT COLOR */
+
+.sign-up-error {
+    color: red;
+}
+
+.log-in-error {
+    color: red;
 }
