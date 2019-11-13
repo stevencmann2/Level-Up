@@ -156,25 +156,30 @@ $(document).ready(function () {
       });
 
       //lets create a logout function
-      //the featured games page will have an href to the homepage signing the user out
       $("#log-out").on("click", function (event) {
         event.preventDefault();
         /////////may want to delete this later but this will show the original form again
         $("#sign-up-form").show();
         $("#member-games").hide();
         $("#greeting-card").hide();
-        auth.signOut();
+        
+        auth.signOut()
+        .then(function(){
+          window.location = './index.html';
+        })
+        .catch(function(err){
+          console.log(err);
+          //error messages for the logout function
+          $(".sign-up-error").text(err.message);
+          $("#log-out-error").text(err.message);
+
+        });
+        
+
         // console.log("user has logged out");
       });
 
       
-
-
-
-
-
-
-
 
       ///// click event for log-in button on MEMBER MODAL
       $("#log-in-button").on("click", function (event) {
@@ -206,10 +211,11 @@ $(document).ready(function () {
         // check user logs in or not with if statement
 
         if (user) {
-          console.log("user is logged in: ", user);
+        //   console.log("user is logged in: ", user);
           $("#member-games").show();
+          
         } else {
-          console.log("user logged out");
+        //   console.log("user logged out");
         }
       });
 
