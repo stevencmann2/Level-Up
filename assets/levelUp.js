@@ -57,7 +57,7 @@ $("#sign-up-button").on("click", function (event) {
   let email = $("#email").val().trim(); //this will be changed to lowercase on the next line
   let useremail = email.toLowerCase();
   let password = $("#password").val().trim();
-  let username = $("#username").val().trim();        //added the username value
+  let username = $("#username").val().trim(); //added the username value
   // let username = $("#username").val().trim();
 
   //  console.log(email);
@@ -69,9 +69,9 @@ $("#sign-up-button").on("click", function (event) {
   auth.createUserWithEmailAndPassword(useremail, password).then(cred => {
     console.log(cred.user); //gives us the object of all the users credentials
     cred.user.updateProfile({
-      displayName: username       ///// accessing the username through the display name aobject in firebase
+      displayName: username ///// accessing the username through the display name aobject in firebase
 
-  });
+    });
   });
 
   $("#email").val("");
@@ -85,8 +85,8 @@ auth.onAuthStateChanged(function (user) {
   if (user) {
     $("#sign-up-form").hide();
     $("#greeting-card").show();
-    $("#user-greeting").text(user.displayName);     //added
-    console.log(user.displayName);    // added 
+    $("#user-greeting").text(user.displayName); //added
+    console.log(user.displayName); // added 
   } else {
     $("#greeting-card").hide();
   }
@@ -131,6 +131,6 @@ auth.onAuthStateChanged(user => {
     $("#member-games").show();
   } else {
     console.log("user logged out");
-   }
+  }
 
 });
