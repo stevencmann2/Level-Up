@@ -94,10 +94,6 @@
                         REVIEWS
                     </div>
                     <div class="card-body" id="review-body">
-                            <form class="form-inline md-form mr-auto mb-4" id="gif-form">
-                                    <input class="form-control mr-sm-2" type="text" id="gif-input" placeholder="REVIEWS BY GAME" aria-label="Search">
-                                    <button class="btn aqua-gradient btn-rounded btn-sm my-0" id="gif-submit" type="submit">SEARCH</button>
-                                  </form>
                         <!-- <blockquote class="blockquote mb-0">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                             <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source
@@ -297,33 +293,51 @@
         <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
         <script src="assets/levelUp.js"></script>
 
-            <script>
-                    $.ajaxPrefilter(function(options) {
-                      if (options.crossDomain && jQuery.support.cors) {
-                        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-                      }
-                    });
-              
-                    $.ajax({
-                      method: "GET",
-                      url:
-                        'http://www.gamespot.com/api/games/?format=json&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b',
-                      success: res => {
-                        console.log(res);
-              
-                        const gameResults = res.results;
-              
-                        for(let i = 0; i < gameResults.length; i++) {
-              
-                        const title = $("<h4>").text(res.results[i].name);
-                        // const reviewer = $("<p>").text("By: " + gameResults[i].reviewer);
-                        
-                        $("#review-body").append(title);
-                      
-              
-                        }
-                      },
-              
-                      });</script>
+        <script>
+            $.ajaxPrefilter(function (options) {
+                if (options.crossDomain && jQuery.support.cors) {
+                    options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+                }
+            });
+
+            $.ajax({
+                // Date filters: &filter=field:start date|end date (using datetime format)
+
+                method: "GET",
+                url: 'http://www.gamespot.com/api/reviews/?format=json&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=publish_date:20190101|20191110',
+                success: res => {
+                    console.log(res);
+
+                    const gameResults = res.results;
+
+                    for (let i = 0; i < gameResults.length; i++) {
+
+                        const game = $("<a>");
+                        game.addClass("game");
+
+                        const title = $("<h5>").text(gameResults[i].title);
+                        const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
+                        const date = $("<p>").text(gameResults[i].publish_date);
+                        const url = gameResults[i].site_detail_url;
+                        game.attr("href", url);
+                        game.append(title, image, date);
+                        $("#review-body").append(game);
+                        // $("#review-body").append(image);
+                        // $("#review-body").append(date);
+
+
+
+
+                    }
+                },
+
+
+                // $("#review-body").on("click", function () {
+                //     const source = $(this).attr(gameResults[i].site_detail_url);
+                
+                // }),
+
+            });
+        </script>
 
 </body>
