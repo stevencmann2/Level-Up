@@ -1,7 +1,16 @@
 
 #form {
 float: right;
-text-transform: uppercase;
+/* font-family: 'joystixmonospace'; */
+}
+
+.form-group {
+    font-family: 'joystixmonospace';
+    text-transform: uppercase;
+}
+
+::placeholder {
+    font-family: 'Sunflower', sans-serif;
 }
 
 #content {
@@ -15,15 +24,16 @@ body {
 }
 
 * {
-    font-family: 'joystixmonospace';
     border-radius: 25px;
 }
 
 .card-header {
+    font-family: 'joystixmonospace';
     text-transform: uppercase;
 }
 
 .navbar {
+    font-family: 'joystixmonospace';
     text-transform: uppercase;
 }
 
@@ -55,6 +65,8 @@ body {
 
 #jumbotron{
     text-align: center;
+    font-family: 'joystixmonospace';
+    text-transform: uppercase;
 }
 
 #form {
@@ -119,10 +131,14 @@ article:hover{
 /* FOOTER CSS */
 #homepage-footer-link {
     color: red;
+    font-family: 'joystixmonospace';
+    text-transform: uppercase;
 }
 
 #homepage-footer-link:hover {
     color:greenyellow;
+    font-family: 'joystixmonospace';
+    text-transform: uppercase;
 }
 
 /* THIS IS FOR THE SOCIAL MEDIA ICONS */
@@ -159,3 +175,4 @@ input {
 .log-in-error {
     color: red;
 }
+
