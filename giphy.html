@@ -127,12 +127,19 @@
                         <input type="password" class="form-control" id="password"
                             placeholder="Must be at least 6 characters">
                     </div>
-                    
+
+                    <!--Error Message DIV-->
+                    <div class="text-center mt-2">
+                        <p class="sign-up-error"></p>
+                    </div>
+
+                    <!-- End of ERROR DIV-->
+
                     <button type="submit" class="btn btn-primary" id="sign-up-button">SIGN UP</button>
 
                     <a href="#" class="card-link text-nowrap mt-3" id="member-link" data-toggle="modal"
                         data-target="#sign-in-modal">Already a Member?</a>
-                    
+
                 </form>
 
                 <!--ONCE LOGGED IN THIS APPEARS-->
@@ -171,6 +178,13 @@
                                             placeholder="Password">
                                     </div>
 
+                                    <!--Error Message DIV-->
+                                    <div class="text-center mt-2">
+                                        <p class="log-in-error"></p>
+                                    </div>
+
+                                    <!-- End of ERROR DIV-->
+
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary" id="log-in-button">LOGIN</button>
                                         <button type="reset" class="btn btn-primary" id="cancel-button"
@@ -194,64 +208,64 @@
                     </div>
                 </div>
             </div>
-             <!--This is the closing main row div>-->
+            <!--This is the closing main row div>-->
         </div>
         <!--FOOTER IT NEEDS TO BE PASTED ACROSS THE PAGES-->
         <div class="row mt-5 bg-secondary">
-                <footer class="page-footer font-small text-center  m-auto pt-2">
-                    <!--This is the top part of the footer with lnk to homepage-->
-                    <div class="footer-copyright text-center py-3">© 2019 Copyright:
-                        <a id="homepage-footer-link" href="https://aw-exe.github.io/Level-Up-Gaming-Site/"> Level Up Gaming</a>
-                    </div>
-                    <!--icons div for footer-->
-                    <!--SOCIAL MEDIA ICONS-->
-                    <div id="icons" class="mb-2">
-                        <!--facebook link-->
-                        <a href="https://www.facebook.com/search/top/?q=gaming&epa=SEARCH_BOX">
-                            <i class="facebook fab fa-lg fa-facebook"></i>
-                        </a>
-                        <!--Twitch link-->
-                        <a href="https://www.twitch.tv/">
-                            <i class="twitch fab fa-lg fa-twitch"></i>
-                        </a>
-    
-                        <!--Twitter link-->
-                        <a href="https://twitter.com/hashtag/gaming?lang=en">
-                        <i class="twitter fab fa-lg fa-twitter-square"></i>
-                        </a>
-    
-                        <!--Instagram link-->
-                        <a href="https://www.instagram.com/explore/tags/gaming/?hl=en">
-                        <i class="instagram fab fa-lg fa-instagram"></i>
-                        </a>
-    
-                        <!--Youtubelink-->
-                        <a href="https://www.youtube.com/channel/UCOpNcN46UbXVtpKMrmU4Abg">
-                        <i class="youtube fab fa-lg fa-youtube"></i>
-                        </a>
-                
-                    </div>
-    
-                </footer>
-            </div>
+            <footer class="page-footer font-small text-center  m-auto pt-2">
+                <!--This is the top part of the footer with lnk to homepage-->
+                <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                    <a id="homepage-footer-link" href="https://aw-exe.github.io/Level-Up-Gaming-Site/"> Level Up
+                        Gaming</a>
+                </div>
+                <!--icons div for footer-->
+                <!--SOCIAL MEDIA ICONS-->
+                <div id="icons" class="mb-2">
+                    <!--facebook link-->
+                    <a href="https://www.facebook.com/search/top/?q=gaming&epa=SEARCH_BOX">
+                        <i class="facebook fab fa-lg fa-facebook"></i>
+                    </a>
+                    <!--Twitch link-->
+                    <a href="https://www.twitch.tv/">
+                        <i class="twitch fab fa-lg fa-twitch"></i>
+                    </a>
 
-            <!-- Link to Moment.js should go here -->
-            <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
-            <!-- Firebase Core JavaScript Link -->
-            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-            <!-- Specific Firebase products we want (Database) -->
-            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-            <!-- Bootstrap Javascript File-->
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                crossorigin="anonymous">
-            </script>
-            <!--New firebase we want to use AUTH & FIRESTORE our new databse-->
-            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
-            <script src="assets/levelUp.js"></script>
+                    <!--Twitter link-->
+                    <a href="https://twitter.com/hashtag/gaming?lang=en">
+                        <i class="twitter fab fa-lg fa-twitter-square"></i>
+                    </a>
+
+                    <!--Instagram link-->
+                    <a href="https://www.instagram.com/explore/tags/gaming/?hl=en">
+                        <i class="instagram fab fa-lg fa-instagram"></i>
+                    </a>
+
+                    <!--Youtubelink-->
+                    <a href="https://www.youtube.com/channel/UCOpNcN46UbXVtpKMrmU4Abg">
+                        <i class="youtube fab fa-lg fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </footer>
+        </div>
+
+        <!-- Link to Moment.js should go here -->
+        <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+        <!-- Firebase Core JavaScript Link -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+        <!-- Specific Firebase products we want (Database) -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!-- Bootstrap Javascript File-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <!--New firebase we want to use AUTH & FIRESTORE our new databse-->
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+        <script src="assets/levelUp.js"></script>
 
 </body>

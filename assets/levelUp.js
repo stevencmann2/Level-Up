@@ -128,7 +128,13 @@ $(document).ready(function () {
             displayName: username ///// accessing the username through the display name aobject in firebase
 
           });
-        });
+
+          //FOR ERROR MESSAGES
+          $(".sign-up-error").text("");
+        }).catch(err => {
+          $(".sign-up-error").text(err.message);
+
+        })
 
         $("#email").val("");
         $("#password").val("");
@@ -136,6 +142,7 @@ $(document).ready(function () {
 
       });
 
+      //PERSISTENCE IS MAINTAINED REGARDLESS OF CLOSING OF WINDOW
       //When authentifaction status is changed, hides and shows corresponding content
       auth.onAuthStateChanged(function (user) {
         if (user) {
@@ -149,6 +156,7 @@ $(document).ready(function () {
       });
 
       //lets create a logout function
+      //the featured games page will have an href to the homepage signing the user out
       $("#log-out").on("click", function (event) {
         event.preventDefault();
         /////////may want to delete this later but this will show the original form again
@@ -158,6 +166,15 @@ $(document).ready(function () {
         auth.signOut();
         // console.log("user has logged out");
       });
+
+      
+
+
+
+
+
+
+
 
       ///// click event for log-in button on MEMBER MODAL
       $("#log-in-button").on("click", function (event) {
@@ -174,6 +191,12 @@ $(document).ready(function () {
           $("#sign-in-modal").modal('hide');
           $("#member-email").val("");
           $("#member-password").val("");
+
+          //For ERROR MESSAGES 
+          $(".log-in-error").text("");
+
+        }).catch(err => {
+          $(".log-in-error").text(err.message);
         })
       });
 

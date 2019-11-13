@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
 
-    <title>Featerured Games-Level Up!</title>
+    <title>Featured Games-Level Up!</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Bootstrap CDN STYLE SHEET-->
@@ -85,18 +85,20 @@
                         <div>
                             <h2>Level Up Pong</h2>
                             <div class="game-wrapper">
-                                <iframe class="scratch" src="https://scratch.mit.edu/projects/342488256/embed" allowtransparency="true"
-                                    width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                                <iframe class="scratch" src="https://scratch.mit.edu/projects/342488256/embed"
+                                    allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no"
+                                    allowfullscreen></iframe>
                             </div>
                         </div>
                         <!--Mario Game-->
                         <div>
-                        <h2 class="mt-4">Mario's Costume Contest</h2>
-                        <div class="game-wrapper">
-                            <iframe class="scratch" src="https://scratch.mit.edu/projects/342565102/embed" allowtransparency="true"
-                                width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                            <h2 class="mt-4">Mario's Costume Contest</h2>
+                            <div class="game-wrapper">
+                                <iframe class="scratch" src="https://scratch.mit.edu/projects/342565102/embed"
+                                    allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no"
+                                    allowfullscreen></iframe>
+                            </div>
                         </div>
-                        </div>  
                     </div>
                 </div>
             </div>
@@ -130,6 +132,13 @@
                             placeholder="Must be at least 6 characters">
                     </div>
 
+                    <!--Error Message DIV-->
+                    <div class="text-center mt-2">
+                        <p class="sign-up-error"></p>
+                    </div>
+
+                    <!-- End of ERROR DIV-->
+
                     <button type="submit" class="btn btn-primary" id="sign-up-button">SIGN UP</button>
 
                     <a href="#" class="card-link text-nowrap mt-3" id="member-link" data-toggle="modal"
@@ -143,7 +152,7 @@
                         <div class="card-body">
                             <h5 class="card-title" id="user-greeting">PLACED HOLDER USERNAME</h5>
                             <h6 class="card-subtitle mb-2 text-muted">You are currently logged in</h6>
-                            <a href="#" class="card-link" id="log-out">Logout</a>
+                            <a href="index.html" class="card-link" id="log-out">Logout</a>
                             <a href="#" class="card-link" id="settings">Settings</a>
                         </div>
                     </div>
@@ -172,6 +181,13 @@
                                         <input type="password" class="form-control" id="member-password"
                                             placeholder="Password">
                                     </div>
+
+                                    <!--Error Message DIV-->
+                                    <div class="text-center mt-2">
+                                        <p class="log-in-error"></p>
+                                    </div>
+
+                                    <!-- End of ERROR DIV-->
 
                                     <div class="modal-footer">
                                         <button type="submit" class="btn btn-primary" id="log-in-button">LOGIN</button>
