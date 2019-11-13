@@ -60,7 +60,6 @@ $(document).ready(function () {
       });
 });
 
-<<<<<<< HEAD
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyAoVw91_gi_qp80TG0T-0o7mCej_yKLStQ",
@@ -130,75 +129,6 @@ $("#sign-up-button").on("click", function (event) {
 
     });
   });
-=======
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAoVw91_gi_qp80TG0T-0o7mCej_yKLStQ",
-        authDomain: "level-up-gaming.firebaseapp.com",
-        databaseURL: "https://level-up-gaming.firebaseio.com",
-        projectId: "level-up-gaming",
-        storageBucket: "level-up-gaming.appspot.com",
-        messagingSenderId: "360362860846",
-        appId: "1:360362860846:web:c6e4191497b1cb712c1abf"
-      };
-
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      const m = moment().format("YYYY-MM-DD");
-      // console.log(m);
-
-      //Query URL for RAWG Gaming
-      const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${m}&ordering=-added`;
-
-      //Attempting AJAX Call for RAWG Gaming 
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function (response) {
-        // console.log(response);
-      });
-
-      /////////////////////////////////////////////////////////////////FIERBASE AUTH////////////////////////////////////////////////////////////////
-      //make auth and firstore references
-      const auth = firebase.auth();
-      const db = firebase.firestore();
-
-
-      console.log(auth);
-      console.log(db);
-
-      //Declaring variables from Sign Up form
-
-      let email = $("#email").val().trim(); //this will be changed to lowercase on the next line
-      let useremail = email.toLowerCase();
-      let password = $("#password").val().trim();
-      let username = $("#username").val().trim();
-      // let username = $("#username").val().trim();
-
-      $("#sign-up-button").on("click", function (event) {
-        ///prevent reload of page
-        event.preventDefault();
-
-        ///////gather info and put apporpriate varibales to lowercase
-
-        let email = $("#email").val().trim(); //this will be changed to lowercase on the next line
-        let useremail = email.toLowerCase();
-        let password = $("#password").val().trim();
-        let username = $("#username").val().trim(); //added the username value
-        // let username = $("#username").val().trim();
-
-        //  console.log(email);
-        //  console.log(password);
-        //  console.log(username);
-        //  console.log(useremail);
-
-        // firebase password function to create a user with password and email &&&& gives them a credential
-        auth.createUserWithEmailAndPassword(useremail, password).then(cred => {
-          console.log(cred.user); //gives us the object of all the users credentials
-          cred.user.updateProfile({
-            displayName: username ///// accessing the username through the display name aobject in firebase
-
-          });
 
           //FOR ERROR MESSAGES
           $(".sign-up-error").text("");
@@ -227,26 +157,28 @@ $("#sign-up-button").on("click", function (event) {
       });
 
       //lets create a logout function
-      //the featured games page will have an href to the homepage signing the user out
       $("#log-out").on("click", function (event) {
         event.preventDefault();
         /////////may want to delete this later but this will show the original form again
         $("#sign-up-form").show();
         $("#member-games").hide();
         $("#greeting-card").hide();
-        auth.signOut();
+        
+        auth.signOut()
+        .then(function(){
+          window.location = './index.html';
+        })
+        .catch(function(err){
+          console.log(err);
+          //error messages for the logout function
+          $(".sign-up-error").text(err.message);
+          $("#log-out-error").text(err.message);
+
+        });
+        
+
         // console.log("user has logged out");
       });
-
-      
-
-
-
-
-
-
-
->>>>>>> 19f54d935083b0e04270f895a64ffc1734ca4d63
 
       ///// click event for log-in button on MEMBER MODAL
       $("#log-in-button").on("click", function (event) {
@@ -256,9 +188,6 @@ $("#sign-up-button").on("click", function (event) {
         emailValue = $("#member-email").val().trim(); /////to lower case
         email = emailValue.toLowerCase();
         password = $("#member-password").val().trim();
-
-<<<<<<< HEAD
-});
 
 //When authentifaction status is changed, hides and shows corresponding content
 auth.onAuthStateChanged(function (user) {
@@ -314,7 +243,7 @@ auth.onAuthStateChanged(user => {
   }
 
 });
-=======
+
         auth.signInWithEmailAndPassword(email, password).then(cred => {
           //console.log(cred.user);
           // close the MEMBER modal  by hidin it and reset the form by clearing the values
@@ -336,12 +265,11 @@ auth.onAuthStateChanged(user => {
         // check user logs in or not with if statement
 
         if (user) {
-          console.log("user is logged in: ", user);
+        //   console.log("user is logged in: ", user);
           $("#member-games").show();
+          
         } else {
-          console.log("user logged out");
+        //   console.log("user logged out");
         }
       });
 
-     
->>>>>>> 19f54d935083b0e04270f895a64ffc1734ca4d63
