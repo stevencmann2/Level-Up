@@ -220,3 +220,62 @@ $(document).ready(function () {
       // console.log("user logged out");
     }
   });
+
+
+
+  //extra card content
+
+  $.ajaxPrefilter(function (options) {
+    if (options.crossDomain && jQuery.support.cors) {
+        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+});
+
+$.ajax({
+
+    method: "GET",
+    url: `http://www.gamespot.com/api/games/?format=json&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:2019-10-01|${m},limit:10`,
+    success: res => {
+        console.log(res);
+
+
+        const gameResults = res.results;
+
+
+          for (let i = 0; i < gameResults.length; i++) {
+            // if (gameResults[i].image.square_tiny === "null") {
+            //     i++;
+
+            // }
+            // else {
+
+            // const game = $("<a>");
+            // game.addClass("news");
+
+            // const title = $("<h5>").text(gameResults[i].name);
+            // const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
+            // const url = gameResults[i].site_detail_url;
+            // game.attr("href", url);
+            // game.append(title, image);
+            // $("#new-games").append(game);
+
+            // }
+
+
+            const game = $("<a>");
+            game.addClass("news");
+
+            const title = $("<h5>").text(gameResults[i].name);
+            const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
+            const url = gameResults[i].site_detail_url;
+            game.attr("href", url);
+            game.append(title, image);
+            $("#new-games").append(game);
+            // $("#new-games").css("overflow-y", "scroll");
+
+        
+
+        }
+    }
+
+});
