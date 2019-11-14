@@ -175,3 +175,13 @@ input {
 .log-in-error {
     color: red;
 }
+
+.card,
+#new-games,
+#review-body {
+
+    max-height: 900px;
+    overflow-y: auto;
+    
+}
+

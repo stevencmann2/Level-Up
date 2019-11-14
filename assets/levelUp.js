@@ -74,7 +74,8 @@ $(document).ready(function () {
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       const m = moment().format("YYYY-MM-DD");
-      // console.log(m);
+      // const from = 
+      console.log(m);
 
       //Query URL for RAWG Gaming
       const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${m}&ordering=-added`;
@@ -283,28 +284,48 @@ auth.onAuthStateChanged(user => {
     $.ajax({
 
         method: "GET",
-        url: 'http://www.gamespot.com/api/releases/?format=json&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=publish_date:20191001|20191110',
+        url: `http://www.gamespot.com/api/games/?format=json&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:2019-10-01|${m},limit:10`,
         success: res => {
             console.log(res);
 
+
             const gameResults = res.results;
 
-            for (let i = 0; i < gameResults.length; i++) {
+
+              for (let i = 0; i < gameResults.length; i++) {
+                // if (gameResults[i].image.square_tiny === "null") {
+                //     i++;
+
+                // }
+                // else {
+
+                // const game = $("<a>");
+                // game.addClass("news");
+
+                // const title = $("<h5>").text(gameResults[i].name);
+                // const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
+                // const url = gameResults[i].site_detail_url;
+                // game.attr("href", url);
+                // game.append(title, image);
+                // $("#new-games").append(game);
+
+                // }
+
 
                 const game = $("<a>");
                 game.addClass("news");
 
-                const title = $("<h5>").text(gameResults[i].title);
-                // const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
-                const date = $("<p>").text(gameResults[i].publish_date);
+                const title = $("<h5>").text(gameResults[i].name);
+                const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
                 const url = gameResults[i].site_detail_url;
                 game.attr("href", url);
-                game.append(title, date);
+                game.append(title, image);
                 $("#new-games").append(game);
-                // $("#review-body").append(image);
-                // $("#review-body").append(date);
+                // $("#new-games").css("overflow-y", "scroll");
+
+            
 
             }
-        },
+        }
 
     });

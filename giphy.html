@@ -92,10 +92,10 @@
                 <div class="card">
                     <div class="card-header">
                         Gif Search</div>
-                    <div class="card-body" id="gif-form">
-                            <form class="form-inline md-form mr-auto mb-4" id="gif-form">
+                    <div class="card-body" id="review-body">
+                            <form class="form-inline md-form mr-auto mb-4">
                                     <input class="form-control mr-sm-2" type="text" id="gif-input" placeholder="Search for GIFS" aria-label="Search">
-                                    <button class="btn aqua-gradient btn-rounded btn-sm my-0" id="gif-submit" type="button">SEARCH</button>
+                                    <button class="btn btn-primary btn-rounded btn-sm my-0" id="gif-submit" type="button">SEARCH</button>
                                   </form>
                                   <div id="gifs"></div>
                     </div>
@@ -205,9 +205,7 @@
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
                     <div class="card-header">NEW GAME RELEASES</div>
                     <div class="card-body" id="new-games">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's
-                            content.</p>
+                    
                     </div>
                 </div>
             </div>
@@ -282,13 +280,22 @@
 
             $(document).ready(function() {
 
+            //   $("#gif-submit").keyup(function(event) {
+
+            //     if (event.keycode === 13) {
+            //         event.preventDefault();
+
+
+            //     }
+
+            //   });  
+
             $("#gif-submit").on("click", function (event) {
 
                     event.preventDefault();
                     let search = $("#gif-input").val().trim();
                     search = search.replace(/ /g, "+");
                     const queryURL = `https://api.giphy.com/v1/gifs/search?q=` + search + `&api_key=mG7YbA6SQ8q8PRgpYLumQ16Fg2xaNZpu&limit=10`
-                    console.log("alskdldas");
                     searchGifs(queryURL);
 
             });

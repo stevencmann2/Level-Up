@@ -85,13 +85,13 @@
         <br>
 
         <!--MAIN DIV CARD FOR EACH INDIVIDUAL PAGE-->
-        <div class="row">
+        <div class="row" id="tall">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
                         LATEST GAMING NEWS
                     </div>
-                    <div class="card-body" id="news-body">
+                    <div class="card-body news-body" id="review-body">
 
                     </div>
                 </div>
@@ -300,7 +300,7 @@
                         const url = gameResults[i].site_detail_url;
                         game.attr("href", url);
                         game.append(image, title, date);
-                        $("#news-body").append(game);
+                        $(".news-body").append(game);
                         // $("#review-body").append(image);
                         // $("#review-body").append(date);
 
