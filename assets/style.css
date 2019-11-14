@@ -4,7 +4,7 @@ float: right;
 /* font-family: 'joystixmonospace'; */
 }
 
-.form-group {
+label {
     font-family: 'joystixmonospace';
     text-transform: uppercase;
 }
@@ -176,10 +176,6 @@ input {
     color: red;
 }
 
- /* #tall {
-    max-height: 900px;
-
-}  */
 .card,
 #new-games,
 #review-body {
@@ -188,3 +184,4 @@ input {
     overflow-y: auto;
     
 }
+
