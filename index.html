@@ -203,11 +203,11 @@
                 <!--EXTRA CONTENT CARD-->
                 <div class="card" id="content">
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-header">Card title</div>
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    <div class="card-header">NEW GAME RELEASES</div>
+                    <div class="card-body" id="new-games">
+                        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's
-                            content.</p>
+                            content.</p> -->
                     </div>
                 </div>
             </div>
@@ -299,7 +299,7 @@
                         const date = $("<p>").text(gameResults[i].publish_date);
                         const url = gameResults[i].site_detail_url;
                         game.attr("href", url);
-                        game.append(title, image, date);
+                        game.append(image, title, date);
                         $("#news-body").append(game);
                         // $("#review-body").append(image);
                         // $("#review-body").append(date);
