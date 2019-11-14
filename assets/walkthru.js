@@ -73,6 +73,8 @@ $(document).ready(function () {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const m = moment().format("YYYY-MM-DD");
+  let sixtydays = moment().subtract(60, "days").format("YYYY-MM-DD");
+      console.log(sixtydays);
   // console.log(m);
 
   //Query URL for RAWG Gaming
@@ -234,7 +236,7 @@ $(document).ready(function () {
 $.ajax({
 
     method: "GET",
-    url: `http://www.gamespot.com/api/games/?format=json&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:2019-10-01|${m},limit:10`,
+    url: `http://www.gamespot.com/api/games/?format=json&sort=release_date:desc&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:${sixtydays}|${m},limit:10`,
     success: res => {
         console.log(res);
 
