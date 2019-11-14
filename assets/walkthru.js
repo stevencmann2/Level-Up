@@ -181,10 +181,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
   ///// click event for log-in button on MEMBER MODAL
   $("#log-in-button").on("click", function (event) {
     event.preventDefault();
@@ -244,12 +240,26 @@ $.ajax({
         const gameResults = res.results;
 
 
-          for (let i = 0; i < gameResults.length; i++) {
-            // if (gameResults[i].image.square_tiny === "null") {
-            //     i++;
+        for (let i = 0; i < gameResults.length; i++) {
+          if (gameResults[i].image === null) {
+           i++;
 
-            // }
-            // else {
+          }
+          else {
+
+          const game = $("<a>");
+          game.addClass("news");
+
+          const title = $("<h5>").text(gameResults[i].name);
+          const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
+          const url = gameResults[i].site_detail_url;
+          game.attr("href", url);
+          game.append(title, image);
+          $("#new-games").append(game);
+
+          }
+
+
 
             // const game = $("<a>");
             // game.addClass("news");
@@ -260,19 +270,6 @@ $.ajax({
             // game.attr("href", url);
             // game.append(title, image);
             // $("#new-games").append(game);
-
-            // }
-
-
-            const game = $("<a>");
-            game.addClass("news");
-
-            const title = $("<h5>").text(gameResults[i].name);
-            const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
-            const url = gameResults[i].site_detail_url;
-            game.attr("href", url);
-            game.append(title, image);
-            $("#new-games").append(game);
             // $("#new-games").css("overflow-y", "scroll");
 
         
