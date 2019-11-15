@@ -58,7 +58,7 @@ $(document).ready(function () {
         const id = $(this).attr('data-key');
         mainVid(id);
       });
-});
+ });  ////// THIS COULD BE MOVED TO THE END 
 
       // Your web app's Firebase configuration
       var firebaseConfig = {
@@ -293,3 +293,4 @@ auth.onAuthStateChanged(user => {
         }
 
     });
+  
