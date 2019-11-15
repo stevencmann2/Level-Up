@@ -13,9 +13,7 @@ label {
     font-family: 'Sunflower', sans-serif;
 }
 
-#content {
-    float: right;
-}
+
 
 body {
     cursor: url("http://www.rw-designer.com/cursor-view/27134.png"),auto;
@@ -182,6 +180,11 @@ input {
 
     max-height: 900px;
     overflow-y: auto;
+    
+}
+
+.equality{
+    display: flex;
     
 }
 

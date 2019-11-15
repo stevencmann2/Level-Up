@@ -58,7 +58,7 @@ $(document).ready(function () {
         const id = $(this).attr('data-key');
         mainVid(id);
       });
-});
+ });  ////// THIS COULD BE MOVED TO THE END 
 
       // Your web app's Firebase configuration
       var firebaseConfig = {
@@ -73,15 +73,15 @@ $(document).ready(function () {
 
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-      const m = moment().format("YYYY-MM-DD");
+      const mo = moment().format("YYYY-MM-DD");
       /////////TRYING TO FORMAT A 60 DAY Window FOR FUNCTIONS FROM m \\\\\\\\\\\\\\\\\\\\
       let sixtydays = moment().subtract(60, "days").format("YYYY-MM-DD");
       console.log(sixtydays);
       // const from = 
-      console.log(m);
+      console.log(mo);
 
       //Query URL for RAWG Gaming
-      const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${m}&ordering=-added`;
+      const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${mo}&ordering=-added`;
 
       //Attempting AJAX Call for RAWG Gaming 
       $.ajax({
@@ -183,37 +183,8 @@ $(document).ready(function () {
         // console.log("user has logged out");
       });
 
-      ///// click event for log-in button on MEMBER MODAL
-      $("#log-in-button").on("click", function (event) {
-        event.preventDefault();
-        //console.log("sign-in button for members clicked");
-        /// get existing member info
-        emailValue = $("#member-email").val().trim(); /////to lower case
-        email = emailValue.toLowerCase();
-        password = $("#member-password").val().trim();
+      
 
-//When authentifaction status is changed, hides and shows corresponding content
-auth.onAuthStateChanged(function (user) {
-  if (user) {
-    $("#sign-up-form").hide();
-    $("#greeting-card").show();
-    $("#user-greeting").text(user.displayName); //added
-    console.log(user.displayName); // added 
-  } else {
-    $("#greeting-card").hide();
-  }
-});
-
-//lets create a logout function
-$("#log-out").on("click", function (event) {
-  event.preventDefault();
-  /////////may want to delete this later but this will show the original form again
-  $("#sign-up-form").show();
-  $("#member-games").hide();
-  $("#greeting-card").hide();
-  auth.signOut();
-  // console.log("user has logged out");
-});
 
 ///// click event for log-in button on MEMBER MODAL
 $("#log-in-button").on("click", function (event) {
@@ -260,21 +231,9 @@ auth.onAuthStateChanged(user => {
         }).catch(err => {
           $(".log-in-error").text(err.message);
         })
-      });
+      
 
-      //listen for auth status changes..... this keeps track of user authentication status
-      auth.onAuthStateChanged(user => {
-        //console.log(user);   // console to check to see if logged in, if not returns null
-        // check user logs in or not with if statement
-
-        if (user) {
-        //   console.log("user is logged in: ", user);
-          $("#member-games").show();
-          
-        } else {
-        //   console.log("user logged out");
-        }
-      });
+      
 
       //NEW GAMES CARD
 
@@ -287,20 +246,33 @@ auth.onAuthStateChanged(user => {
     $.ajax({
 
         method: "GET",
-        url: `http://www.gamespot.com/api/games/?format=json&sort=release_date:desc&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:${sixtydays}|${m},limit:10`,
+        url: `http://www.gamespot.com/api/games/?format=json&sort=release_date:desc&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:${sixtydays}|${mo},limit:10`,
         success: res => {
             console.log(res);
 
             
             const gameResults = res.results;
-
+          console.log(gameResults);
 
               for (let i = 0; i < gameResults.length; i++) {
-                // if (gameResults[i].image.square_tiny === "null") {
-                //     i++;
+                if (gameResults[i].image === null) {
+                 i++;
 
-                // }
-                // else {
+                }
+                else {
+
+                const game = $("<a>");
+                game.addClass("news");
+
+                const title = $("<h5>").text(gameResults[i].name);
+                const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
+                const url = gameResults[i].site_detail_url;
+                game.attr("href", url);
+                game.append(title, image);
+                $("#new-games").append(game);
+
+                }
+
 
                 // const game = $("<a>");
                 // game.addClass("news");
@@ -312,18 +284,7 @@ auth.onAuthStateChanged(user => {
                 // game.append(title, image);
                 // $("#new-games").append(game);
 
-                // }
 
-
-                const game = $("<a>");
-                game.addClass("news");
-
-                const title = $("<h5>").text(gameResults[i].name);
-                const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
-                const url = gameResults[i].site_detail_url;
-                game.attr("href", url);
-                game.append(title, image);
-                $("#new-games").append(game);
                 // $("#new-games").css("overflow-y", "scroll");
 
             
@@ -332,3 +293,4 @@ auth.onAuthStateChanged(user => {
         }
 
     });
+  
