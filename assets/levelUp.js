@@ -201,6 +201,9 @@ $("#log-in-button").on("click", function (event) {
     $("#sign-in-modal").modal('hide');
     $("#member-email").val("");
     $("#member-password").val("");
+  }).catch(err => {
+    $(".log-in-error").text(err.message);
+    console.log(err.message)
   })
 });
 
@@ -218,19 +221,20 @@ auth.onAuthStateChanged(user => {
 
 });
 
-        auth.signInWithEmailAndPassword(email, password).then(cred => {
-          //console.log(cred.user);
-          // close the MEMBER modal  by hidin it and reset the form by clearing the values
-          $("#sign-in-modal").modal('hide');
-          $("#member-email").val("");
-          $("#member-password").val("");
+        // auth.signInWithEmailAndPassword(email, password).then(cred => {
+        //   //console.log(cred.user);
+        //   // close the MEMBER modal  by hidin it and reset the form by clearing the values
+        //   $("#sign-in-modal").modal('hide');
+        //   $("#member-email").val("");
+        //   $("#member-password").val("");
 
-          //For ERROR MESSAGES 
-          $(".log-in-error").text("");
+        //   //For ERROR MESSAGES 
+        //   $(".log-in-error").text("");
 
-        }).catch(err => {
-          $(".log-in-error").text(err.message);
-        })
+        // }).catch(err => {
+        //   $(".log-in-error").text(err.message);
+        //   console.log(err.message)
+        // })
       
 
       
