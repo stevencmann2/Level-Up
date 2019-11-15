@@ -236,7 +236,7 @@ auth.onAuthStateChanged(user => {
     $.ajax({
 
         method: "GET",
-        url: `http://www.gamespot.com/api/games/?format=json&sort=release_date:desc&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:${sixtydays}|${mo},limit:10`,
+        url: `http://www.gamespot.com/api/games/?format=json&sort=release_date:desc&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:${sixtydays}|${mo}&limit=20`,
         success: res => {
             console.log(res);
 
