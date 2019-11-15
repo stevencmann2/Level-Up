@@ -183,37 +183,8 @@ $(document).ready(function () {
         // console.log("user has logged out");
       });
 
-      ///// click event for log-in button on MEMBER MODAL
-      $("#log-in-button").on("click", function (event) {
-        event.preventDefault();
-        //console.log("sign-in button for members clicked");
-        /// get existing member info
-        emailValue = $("#member-email").val().trim(); /////to lower case
-        email = emailValue.toLowerCase();
-        password = $("#member-password").val().trim();
+      
 
-//When authentifaction status is changed, hides and shows corresponding content
-auth.onAuthStateChanged(function (user) {
-  if (user) {
-    $("#sign-up-form").hide();
-    $("#greeting-card").show();
-    $("#user-greeting").text(user.displayName); //added
-    console.log(user.displayName); // added 
-  } else {
-    $("#greeting-card").hide();
-  }
-});
-
-//lets create a logout function
-$("#log-out").on("click", function (event) {
-  event.preventDefault();
-  /////////may want to delete this later but this will show the original form again
-  $("#sign-up-form").show();
-  $("#member-games").hide();
-  $("#greeting-card").hide();
-  auth.signOut();
-  // console.log("user has logged out");
-});
 
 ///// click event for log-in button on MEMBER MODAL
 $("#log-in-button").on("click", function (event) {
@@ -260,21 +231,9 @@ auth.onAuthStateChanged(user => {
         }).catch(err => {
           $(".log-in-error").text(err.message);
         })
-      });
+      
 
-      //listen for auth status changes..... this keeps track of user authentication status
-      auth.onAuthStateChanged(user => {
-        //console.log(user);   // console to check to see if logged in, if not returns null
-        // check user logs in or not with if statement
-
-        if (user) {
-        //   console.log("user is logged in: ", user);
-          $("#member-games").show();
-          
-        } else {
-        //   console.log("user logged out");
-        }
-      });
+      
 
       //NEW GAMES CARD
 
@@ -296,11 +255,24 @@ auth.onAuthStateChanged(user => {
 
 
               for (let i = 0; i < gameResults.length; i++) {
-                // if (gameResults[i].image.square_tiny === "null") {
-                //     i++;
+                if (gameResults[i].image === null) {
+                 i++;
 
-                // }
-                // else {
+                }
+                else {
+
+                const game = $("<a>");
+                game.addClass("news");
+
+                const title = $("<h5>").text(gameResults[i].name);
+                const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
+                const url = gameResults[i].site_detail_url;
+                game.attr("href", url);
+                game.append(title, image);
+                $("#new-games").append(game);
+
+                }
+
 
                 // const game = $("<a>");
                 // game.addClass("news");
@@ -312,18 +284,7 @@ auth.onAuthStateChanged(user => {
                 // game.append(title, image);
                 // $("#new-games").append(game);
 
-                // }
 
-
-                const game = $("<a>");
-                game.addClass("news");
-
-                const title = $("<h5>").text(gameResults[i].name);
-                const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
-                const url = gameResults[i].site_detail_url;
-                game.attr("href", url);
-                game.append(title, image);
-                $("#new-games").append(game);
                 // $("#new-games").css("overflow-y", "scroll");
 
             

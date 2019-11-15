@@ -185,8 +185,8 @@ input {
     
 }
 
+.equality{
+    display: flex;
+    
+}
 
-/* .news:hover {
-    border: 2px 
-    solid grey;
-} */
