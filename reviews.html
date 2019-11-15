@@ -230,7 +230,7 @@
             <!--This is the closing main row div>-->
         </div>
         <!--FOOTER IT NEEDS TO BE PASTED ACROSS THE PAGES-->
-        <div class="row mt-5 bg-secondary">
+        <div class="row mt-5 bg-light">
             <footer class="page-footer font-small text-center  m-auto pt-2">
                 <!--This is the top part of the footer with lnk to homepage-->
                 <div class="footer-copyright text-center py-3">© 2019 Copyright:
@@ -325,6 +325,7 @@
                     for (let i = 0; i < gameResults.length; i++) {
 
                         const game = `
+                        <a href = "${gameResults[i].site_detail_url}">
                         <div class="card mb-3">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
@@ -339,6 +340,7 @@
                                 </div>
                             </div>
                         </div>
+                        </a>
                         `
             
                         // const game = $("<a>");

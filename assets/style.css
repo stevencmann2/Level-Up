@@ -128,7 +128,7 @@ article:hover {
 
 /* FOOTER CSS */
 #homepage-footer-link {
-    color: red;
+    color: maroon;
     font-family: 'joystixmonospace';
     text-transform: uppercase;
 }
@@ -141,7 +141,7 @@ article:hover {
 
 /* THIS IS FOR THE SOCIAL MEDIA ICONS */
 i {
-    color:red
+    color: maroon;
 }
 
 a:hover {
