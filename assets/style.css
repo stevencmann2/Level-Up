@@ -98,7 +98,7 @@ article {
     margin: 0 auto;
 }
 
-article:hover{
+article:hover {
     border: 2px solid grey;
 }
 
@@ -107,7 +107,7 @@ article:hover{
     border-radius: 4px;
 }
 
-.details{
+.details {
     padding: 8px 22px;
 }
 
@@ -154,7 +154,7 @@ i:hover {
     color:greenyellow;
 }
 
-h4 {
+h4, h5 {
     font-family: 'Sunflower', sans-serif;
 }
 
@@ -190,3 +190,8 @@ input {
     
 }
 
+.news {
+
+    margin-bottom: 40px;
+
+}
