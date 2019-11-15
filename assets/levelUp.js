@@ -269,6 +269,7 @@ auth.onAuthStateChanged(user => {
                 game.addClass("news");
 
                 const title = $("<h5>").text(gameResults[i].name);
+
                 const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
                 const url = gameResults[i].site_detail_url;
                 game.attr("href", url);
