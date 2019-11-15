@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
       //This is related to HTML 
       $("#greeting-card").hide();
@@ -76,9 +77,8 @@ $(document).ready(function () {
       const mo = moment().format("YYYY-MM-DD");
       /////////TRYING TO FORMAT A 60 DAY Window FOR FUNCTIONS FROM m \\\\\\\\\\\\\\\\\\\\
       let sixtydays = moment().subtract(60, "days").format("YYYY-MM-DD");
-      console.log(sixtydays);
       // const from = 
-      console.log(mo);
+      
 
       //Query URL for RAWG Gaming
       const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${mo}&ordering=-added`;
@@ -127,14 +127,19 @@ $(document).ready(function () {
 
         // firebase password function to create a user with password and email &&&& gives them a credential
         auth.createUserWithEmailAndPassword(useremail, password).then(cred => {
-          console.log(cred.user); //gives us the object of all the users credentials
+          
+      
           cred.user.updateProfile({
             displayName: username ///// accessing the username through the display name aobject in firebase
 
+          }).then(function() {
+            const currentUser = firebase.auth().currentUser;
+            $("#user-greeting").text(currentUser.displayName);
           });
 
           //FOR ERROR MESSAGES
           $(".sign-up-error").text("");
+          
         }).catch(err => {
           $(".sign-up-error").text(err.message);
 
@@ -146,18 +151,7 @@ $(document).ready(function () {
 
       });
 
-      //PERSISTENCE IS MAINTAINED REGARDLESS OF CLOSING OF WINDOW
-      //When authentifaction status is changed, hides and shows corresponding content
-      auth.onAuthStateChanged(function (user) {
-        if (user) {
-          $("#sign-up-form").hide();
-          $("#greeting-card").show();
-          $("#user-greeting").text(user.displayName); //added
-          console.log(user.displayName); // added 
-        } else {
-          $("#greeting-card").hide();
-        }
-      });
+    
 
       //lets create a logout function
       $("#log-out").on("click", function (event) {
@@ -180,7 +174,7 @@ $(document).ready(function () {
         });
         
 
-        // console.log("user has logged out");
+        
       });
 
       
@@ -189,14 +183,14 @@ $(document).ready(function () {
 ///// click event for log-in button on MEMBER MODAL
 $("#log-in-button").on("click", function (event) {
   event.preventDefault();
-  //console.log("sign-in button for members clicked");
+
   /// get existing member info
   emailValue = $("#member-email").val().trim(); /////to lower case
   email = emailValue.toLowerCase();
   password = $("#member-password").val().trim();
 
   auth.signInWithEmailAndPassword(email, password).then(cred => {
-    //console.log(cred.user);
+    
     // close the MEMBER modal  by hidin it and reset the form by clearing the values
     $("#sign-in-modal").modal('hide');
     $("#member-email").val("");
@@ -214,6 +208,12 @@ auth.onAuthStateChanged(user => {
 
   if (user) {
     console.log("user is logged in: ", user);
+            
+          $("#sign-up-form").hide();
+          $("#greeting-card").show();
+          $("#user-greeting").text(user.displayName); //added
+          console.log(user.displayName); // added 
+    $("#user-greeting").text(user.displayName); //added
     $("#member-games").show();
   } else {
     console.log("user logged out");
@@ -221,20 +221,6 @@ auth.onAuthStateChanged(user => {
 
 });
 
-        // auth.signInWithEmailAndPassword(email, password).then(cred => {
-        //   //console.log(cred.user);
-        //   // close the MEMBER modal  by hidin it and reset the form by clearing the values
-        //   $("#sign-in-modal").modal('hide');
-        //   $("#member-email").val("");
-        //   $("#member-password").val("");
-
-        //   //For ERROR MESSAGES 
-        //   $(".log-in-error").text("");
-
-        // }).catch(err => {
-        //   $(".log-in-error").text(err.message);
-        //   console.log(err.message)
-        // })
       
 
       
