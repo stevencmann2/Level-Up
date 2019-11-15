@@ -73,15 +73,15 @@ $(document).ready(function () {
 
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-      const m = moment().format("YYYY-MM-DD");
+      const mo = moment().format("YYYY-MM-DD");
       /////////TRYING TO FORMAT A 60 DAY Window FOR FUNCTIONS FROM m \\\\\\\\\\\\\\\\\\\\
       let sixtydays = moment().subtract(60, "days").format("YYYY-MM-DD");
       console.log(sixtydays);
       // const from = 
-      console.log(m);
+      console.log(mo);
 
       //Query URL for RAWG Gaming
-      const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${m}&ordering=-added`;
+      const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${mo}&ordering=-added`;
 
       //Attempting AJAX Call for RAWG Gaming 
       $.ajax({
@@ -246,13 +246,13 @@ auth.onAuthStateChanged(user => {
     $.ajax({
 
         method: "GET",
-        url: `http://www.gamespot.com/api/games/?format=json&sort=release_date:desc&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:${sixtydays}|${m},limit:10`,
+        url: `http://www.gamespot.com/api/games/?format=json&sort=release_date:desc&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:${sixtydays}|${mo},limit:10`,
         success: res => {
             console.log(res);
 
             
             const gameResults = res.results;
-
+          console.log(gameResults);
 
               for (let i = 0; i < gameResults.length; i++) {
                 if (gameResults[i].image === null) {
