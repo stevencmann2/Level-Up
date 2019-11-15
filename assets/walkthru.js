@@ -77,17 +77,6 @@ $(document).ready(function () {
       console.log(sixtydays);
   // console.log(m);
 
-  //Query URL for RAWG Gaming
-  const queryURL = `https://api.rawg.io/api/games?dates=2019-10-10,${m}&ordering=-added`;
-
-  //Attempting AJAX Call for RAWG Gaming 
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function (response) {
-    // console.log(response);
-  });
-
   /////////////////////////////////////////////////////////////////FIERBASE AUTH////////////////////////////////////////////////////////////////
   //make auth and firstore references
   const auth = firebase.auth();
@@ -222,7 +211,6 @@ $(document).ready(function () {
 
 
   //extra card content
-
   $.ajaxPrefilter(function (options) {
     if (options.crossDomain && jQuery.support.cors) {
         options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
@@ -232,45 +220,42 @@ $(document).ready(function () {
 $.ajax({
 
     method: "GET",
-    url: `http://www.gamespot.com/api/games/?format=json&sort=release_date:desc&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:${sixtydays}|${m},limit:10`,
+    url: `http://www.gamespot.com/api/games/?format=json&sort=release_date:desc&api_key=ce3e6d5e61b7cecf7d622fedfceb1ab2de3ade0b&filter=release_date:${sixtydays}|${m}&limit=20`,
     success: res => {
         console.log(res);
 
-
+        
         const gameResults = res.results;
+      console.log(gameResults);
 
+          for (let i = 0; i < gameResults.length; i++) {
+            if (gameResults[i].image === null) {
+             i++;
 
-        for (let i = 0; i < gameResults.length; i++) {
-          if (gameResults[i].image === null) {
-           i++;
+            }
+            else {
 
-          }
-          else {
+            const game = `
+            <a href = "${gameResults[i].site_detail_url}">
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                    <img src="${gameResults[i].image.square_small}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">${gameResults[i].name}</h5>
+                        <p class="card-text">${gameResults[i].release_date}</p>
+                  
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </a>`
 
-          const game = $("<a>");
-          game.addClass("news");
+            $("#new-games").append(game);
 
-          const title = $("<h5>").text(gameResults[i].name);
-          const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
-          const url = gameResults[i].site_detail_url;
-          game.attr("href", url);
-          game.append(title, image);
-          $("#new-games").append(game);
-
-          }
-
-
-
-            // const game = $("<a>");
-            // game.addClass("news");
-
-            // const title = $("<h5>").text(gameResults[i].name);
-            // const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
-            // const url = gameResults[i].site_detail_url;
-            // game.attr("href", url);
-            // game.append(title, image);
-            // $("#new-games").append(game);
-            // $("#new-games").css("overflow-y", "scroll");
+            }
 
         
 

@@ -251,33 +251,27 @@ auth.onAuthStateChanged(user => {
                 }
                 else {
 
-                const game = $("<a>");
-                game.addClass("news");
+                const game = `
+                <a href = "${gameResults[i].site_detail_url}">
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                        <img src="${gameResults[i].image.square_small}" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">${gameResults[i].name}</h5>
+                            <p class="card-text">${gameResults[i].release_date}</p>
+                      
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </a>`
 
-                const title = $("<h5>").text(gameResults[i].name);
-
-                const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
-                const url = gameResults[i].site_detail_url;
-                game.attr("href", url);
-                game.append(title, image);
                 $("#new-games").append(game);
 
                 }
-
-
-                // const game = $("<a>");
-                // game.addClass("news");
-
-                // const title = $("<h5>").text(gameResults[i].name);
-                // const image = $("<img>").attr("src", gameResults[i].image.square_tiny);
-                // const url = gameResults[i].site_detail_url;
-                // game.attr("href", url);
-                // game.append(title, image);
-                // $("#new-games").append(game);
-
-
-                // $("#new-games").css("overflow-y", "scroll");
-
             
 
             }
