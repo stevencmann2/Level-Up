@@ -139,7 +139,7 @@ $(document).ready(function () {
           $(".sign-up-error").text(err.message);
 
         })
-
+        
         $("#email").val("");
         $("#password").val("");
         $("#username").val("");
