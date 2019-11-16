@@ -27,15 +27,12 @@ Gaming news and critiques in one convenient place.
 
 ## Tech Stack
 
-- What languages is it written with
-- What libraries are used
-- Update at the end of the project
+- What languages is it written with? Javascript, HTML & CSS.
+- What libraries are used? Boostrap, JQuery & Firebase, Font Awesome, Google Fonts, Web Font Kit. 
 
 ## APIs
 
-- Giphy API, GameStop API & YouTube API
-- Update it has the project evolves
-- make sure its accurate at the end
+- What APIs did you use? Giphy API, GameSpot API & YouTube API
 
 ## MVP
 
@@ -54,9 +51,8 @@ Gaming news and critiques in one convenient place.
 
 ## Future Development
 
-- Whats been tabled
-- Update this after the project has been completed
+- Whats been tabled: More featues like trending news, ability to sort by platform, member forum board, general styling, pagination for news content
 
 ## Credits/Resources
 
-- Any credits you should list to resources you used
+- Any credits you should list to resources you used: https://developers.google.com/youtube/v3 - https://www.gamespot.com/api/ - https://developers.giphy.com/
