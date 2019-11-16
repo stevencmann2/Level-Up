@@ -79,7 +79,7 @@ float: right;
 
 p{
     color: grey;
-    font-size: 0.7rem;
+    font-size: 1rem;
 }
 
 .hot-pepper-card {
@@ -134,7 +134,7 @@ article:hover {
 }
 
 #homepage-footer-link:hover {
-    color:greenyellow;
+    color: dodgerblue;
     font-family: 'joystixmonospace';
     text-transform: uppercase;
 }
@@ -149,7 +149,7 @@ a:hover {
 }
 
 i:hover {
-    color:greenyellow;
+    color: dodgerblue;
 }
 
 h4, h5 {
