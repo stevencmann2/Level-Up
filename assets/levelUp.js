@@ -256,7 +256,7 @@ auth.onAuthStateChanged(user => {
                 <div class="card mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                        <img src="${gameResults[i].image.square_small}" class="card-img" alt="...">
+                        <img src="${gameResults[i].image.square_small}" class="card-img" alt="this is an image of ${gameResults[i].name}">
                         </div>
                         <div class="col-md-8">
                         <div class="card-body">

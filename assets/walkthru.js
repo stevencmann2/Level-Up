@@ -43,7 +43,7 @@ $(document).ready(function () {
 
       $('main').append(`
             <article class= "item" data-key="${vid}">
-              <img src="${thumb}" alt="" class="thumb">
+              <img src="${thumb}" alt="This is an image of ${title}" class="thumb">
               <div class="details">
                 <h4>${title}</h4>
                 <p>${desc}</p>
