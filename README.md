@@ -1,6 +1,6 @@
 # Level-Up-Gaming-Site
 
-> [Live Site](Put the deployed link here once you have it)
+> [Live Site]: https://aw-exe.github.io/Level-Up-Gaming-Site/
 
 ## Project Summary
 
@@ -8,18 +8,18 @@ Gaming news and critiques in one convenient place.
 
 ## Developers
 
-- Developer 1: Role
-  - Portfolio
-  - Github
-  - LinkedIn
-- Developer 2: Role
-  - Portfolio
-  - Github
-  - LinkedIn
-- Developer 3: Role
-  - Portfolio
-  - Github
-  - LinkedIn
+- Ashton Wetsel:
+  - Portfolio: 
+  - Github: https://github.com/aw-exe
+  - LinkedIn: https://www.linkedin.com/in/ashtonwetsel/
+- Steven Mann:
+  - Portfolio: https://stevencmann2.github.io/Responsive-Portfolio/
+  - Github: https://github.com/stevencmann2
+  - LinkedIn: https://www.linkedin.com/in/steven-mann-b54494a6/
+- An Phan:
+  - Portfolio: https://antphan98.github.io/Bootstrap-Portfolio/
+  - Github: https://github.com/antphan98
+  - LinkedIn: https://www.linkedin.com/in/an-phan-9827b4186/
 
 ## Animated Gifs/Pictures of App
 
@@ -33,7 +33,7 @@ Gaming news and critiques in one convenient place.
 
 ## APIs
 
-- List the two apis
+- Giphy API, GameStop API & YouTube API
 - Update it has the project evolves
 - make sure its accurate at the end
 
