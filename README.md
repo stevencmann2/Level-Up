@@ -9,7 +9,7 @@ Gaming news and critiques in one convenient place.
 ## Developers
 
 - Ashton Wetsel:
-  - Portfolio: 
+  - Portfolio: https://aw-exe.github.io/Bootstrap-Portfolio/
   - Github: https://github.com/aw-exe
   - LinkedIn: https://www.linkedin.com/in/ashtonwetsel/
 - Steven Mann:
