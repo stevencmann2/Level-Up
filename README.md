@@ -23,7 +23,7 @@ Gaming news and critiques in one convenient place.
 
 ## Animated Gifs/Pictures of App
 
-![](assets/images/screenshot1.png)
+![](level-up-gaming/assets/images/screenshot1.png)
 
 ## Tech Stack
 
