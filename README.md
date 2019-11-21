@@ -23,7 +23,7 @@ Gaming news and critiques in one convenient place.
 
 ## Animated Gifs/Pictures of App
 
-- Place various screens of your app here after they have been built
+![](assets/images/screenshot1.png)
 
 ## Tech Stack
 
