@@ -12,7 +12,10 @@ Gaming site delivering news, critiques, and custom user content in one convenien
   - visitor@gmail.com
 - Password
   - Visitor1234!
+  
+## Deployment
 
+https://aw-exe.github.io/Level-Up-Gaming-Site/
 
 ## Developers
 
@@ -31,7 +34,8 @@ Gaming site delivering news, critiques, and custom user content in one convenien
 
 ## Animated Gifs/Pictures of App
 
-![](level-up-gaming/assets/images/demo.png)
+![Level Up Homepage](./assets/images/demo.png)
+
 
 ## Tech Stack
 
