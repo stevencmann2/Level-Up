@@ -4,7 +4,18 @@
 
 ## Project Summary
 
-Gaming news and critiques in one convenient place. 
+Gaming site delivering news, critiques, and custom user content in one convenient place.  
+
+## Sample Login
+
+- Username
+  - visitor@gmail.com
+- Password
+  - Visitor1234!
+
+## Deployment
+
+https://aw-exe.github.io/Level-Up-Gaming-Site/
 
 ## Developers
 
@@ -13,7 +24,7 @@ Gaming news and critiques in one convenient place.
   - Github: https://github.com/aw-exe
   - LinkedIn: https://www.linkedin.com/in/ashtonwetsel/
 - Steven Mann:
-  - Portfolio: https://stevencmann2.github.io/Responsive-Portfolio/
+  - Portfolio: https://steven-mann-portfolio.netlify.app/
   - Github: https://github.com/stevencmann2
   - LinkedIn: https://www.linkedin.com/in/steven-mann-b54494a6/
 - An Phan:
@@ -43,7 +54,7 @@ Gaming news and critiques in one convenient place.
 
 ## Stretch Goals
 
-- Create a functional login feature using Firebase authentication
+ [checkbox:checked] Create a functional login feature using Firebase authentication
 - Have a custom cursor
 - Custom CSS hover 
 - Sticky card that encourages user to create an account
