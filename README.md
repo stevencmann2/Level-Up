@@ -2,7 +2,7 @@
 
 > [Live Site]: https://aw-exe.github.io/Level-Up-Gaming-Site/
 
-## Project Summary
+## Summary
 
 Gaming site delivering news, critiques, and custom user content in one convenient place.  
 
@@ -13,9 +13,6 @@ Gaming site delivering news, critiques, and custom user content in one convenien
 - Password
   - Visitor1234!
 
-## Deployment
-
-https://aw-exe.github.io/Level-Up-Gaming-Site/
 
 ## Developers
 
@@ -34,7 +31,7 @@ https://aw-exe.github.io/Level-Up-Gaming-Site/
 
 ## Animated Gifs/Pictures of App
 
-![](level-up-gaming/assets/images/screenshot1.png)
+![](level-up-gaming/assets/images/demo.png)
 
 ## Tech Stack
 
