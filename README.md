@@ -47,18 +47,18 @@ https://aw-exe.github.io/Level-Up-Gaming-Site/
 
 ## MVP
 
-- Multiple webpages
-- Clean and functional UI
-- Linking of multiple APIs
-- Functional links and tabs within the webpage
+- [x] Multiple webpages
+- [x] Clean and functional UI
+- [x] Linking of multiple APIs
+- [x] Functional links and tabs within the webpage
 
 ## Stretch Goals
 
- [checkbox:checked] Create a functional login feature using Firebase authentication
-- Have a custom cursor
+- [x] Create a functional login feature using Firebase authentication
+- [x] Have a custom cursor
 - Custom CSS hover 
-- Sticky card that encourages user to create an account
-- API for trending news or category
+- [x] Card that encourages user to create an account
+- [x] API for trending news or category
 
 ## Future Development
 
